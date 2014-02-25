@@ -4,7 +4,8 @@
 # License: The same licence as Redis, New BSD
 #          http://www.opensource.org/licenses/bsd-license.php
 #
-default_redis_version=2.4.15
+source_location="download.redis.io/releases"
+default_redis_version=2.8.6
 
 # Emit usage information to the user.
 usage() {
@@ -116,7 +117,7 @@ cd $source_path
 #
 printf "\nDownloading  ${package}-${version}.${archive_format} ...\n"
 
-curl -O -L "http://redis.googlecode.com/files/${package}-${version}.${archive_format}"
+curl -O -L "http://${source_location}/${package}-${version}.${archive_format}"
 
 result=$? ; if [[ "$result" -gt 0 ]] ; then
 
